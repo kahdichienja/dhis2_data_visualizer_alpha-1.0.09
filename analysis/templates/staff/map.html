@@ -14,9 +14,13 @@
         var data = google.visualization.arrayToDataTable([
             ['Lat', 'Long', 'Name'],
             //,34.75706
-            [-0.09880, 34.75706, 'Kenya'],
-            [-0.09880, 34.75706, 'Kenya'],
-            [-0.19880, 35.75706, 'Kenya'],
+            [-0.09880, 34.75706, 'Nakuru'],
+            [-0.09880, 34.75706, 'Kisumu'],
+            [3.2285332, 40.7056165, 'Mandera'],
+            [3.1166086,35.6000028, 'Lodwar'],
+            [-4.05052,39.667169, 'mombasa'],
+            [-1.0211616,34.3096432, 'Migori'],
+
         ]);
 
         var map = new google.visualization.Map(document.getElementById('map_div'));
@@ -32,6 +36,8 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
+                    <button id="button2">Get Users</button>
+                    <div id="users"></div>
                     <h1>Map</h1>
                 </div>
                 <div class="col-sm-6">
@@ -131,7 +137,7 @@
                 </div>
                 <div class="card-body">
                   <div class="chart">
-                    <div id="map_div" style="min-height: 250px; height: 250px; max-width: 100%;"></div>
+                    <div id="map_div" style="height: 100%; width: 100%;"></div>
                   </div>
                 </div>
                 <!-- /.card-body -->
@@ -144,41 +150,35 @@
         </div><!-- /.container-fluid -->
       </section>
 </div>
-{% endblock %}
-<html>
+<script>
 
-<head>
-    {% load static %}
-    <script type="text/javascript" src="{% static 'dist/js/Googlemap.js' %}"></script>
-    <script type="text/javascript">
-        google.charts.load("current", {
-            "packages": ["map"],
-            // Note: you will need to get a mapsApiKey for your project.
-            // See: https://developers.google.com/chart/interactive/docs/basic_load_libs#load-settings
-            "mapsApiKey": "AIzaSyCWC47OOAZDFRmx8pgKyWIk9qw9d7qkKKE"
-        });
-        google.charts.setOnLoadCallback(drawChart);
-        function drawChart() {
-            var data = google.visualization.arrayToDataTable([
-                ['Lat', 'Long', 'Name'],
-                [37.4232, -122.0853, 'Work'],
-                [37.4289, -122.1697, 'University'],
-                [37.6153, -122.3900, 'Airport'],
-                [37.4422, -122.1731, 'Shopping']
-            ]);
+    let button = document.getElementById('button2')
+    button.addEventListener('click', loadUsers, true);
 
-            var map = new google.visualization.Map(document.getElementById('map_div'));
-            map.draw(data, {
-                showTooltip: true,
-                showInfoWindow: true
-            });
+    function loadUsers(){
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', "{% static 'dist/js/data.json' %}", true);
+  
+        xhr.onload = function(){
+          if(this.status == 200){
+            var users = JSON.parse(this.responseText);
+            
+            var output = '';
+            
+            for(var i in users){
+              output += '<ul>' +
+                '<li>ID: '+users[i].id+'</li>' +
+                '<li>Name: '+users[i].name+'</li>' +
+                '<li>Email: '+users[i].email+'</li>' +
+                '</ul>';
+            }
+  
+            document.getElementById('users').innerHTML = output;
+          }
         }
+  
+        xhr.send();
+      }
 
-    </script>
-</head>
-
-<body>
-    <div id="map_div" style="width: 400px; height: 300px"></div>
-</body>
-
-</html>
+</script>
+{% endblock %}
