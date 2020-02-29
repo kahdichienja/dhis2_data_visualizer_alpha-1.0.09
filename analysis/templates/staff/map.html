@@ -1,0 +1,185 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<script type="text/javascript">
+    google.charts.load("current", {
+        "packages": ["map"],
+        // Note: you will need to get a mapsApiKey for your project.
+        // See: https://developers.google.com/chart/interactive/docs/basic_load_libs#load-settings
+        "mapsApiKey": "AIzaSyCWC47OOAZDFRmx8pgKyWIk9qw9d7qkKKE"
+    });
+    google.charts.setOnLoadCallback(drawChart);
+    function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+            ['Lat', 'Long', 'Name'],
+            //,34.75706
+            [-0.09880, 34.75706, 'Nakuru'],
+            [-0.09880, 34.75706, 'Kisumu'],
+            [3.2285332, 40.7056165, 'Mandera'],
+            [3.1166086,35.6000028, 'Lodwar'],
+            [-4.05052,39.667169, 'mombasa'],
+            [-1.0211616,34.3096432, 'Migori'],
+
+        ]);
+
+        var map = new google.visualization.Map(document.getElementById('map_div'));
+        map.draw(data, {
+            showTooltip: true,
+            showInfoWindow: true
+        });
+    }
+
+</script>
+<div class="content-wrapper">
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <button id="button2">Get Users</button>
+                    <div id="users"></div>
+                    <h1>Map</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active">Indicators Charts</li>
+                    </ol>
+                </div>
+                <div class="container">
+                    <div class="row col-12">
+                        <form action="" method="GET">
+                            <div class="form-row">
+                                <div class="col">
+                                    <label class="-mbs required">Select County </label>
+                                    <select class="form-control" name="county" id="map">
+                                        <option value="Baringo">Baringo</option>
+                                        <option value="Bomet">Bomet</option>
+                                        <option value="Bungoma">Bungoma</option>
+                                        <option value="Busia">Busia</option>
+                                        <option value="Elgeyo-Marakwet">Elgeyo-Marakwet</option>
+                                        <option value="Embu">Embu</option>
+                                        <option value="Garissa">Garissa</option>
+                                        <option value="Homa Bay">Homa Bay</option>
+                                        <option value="Isiolo">Isiolo</option>
+                                        <option value="Kajiado">Kajiado</option>
+                                        <option value="Kakamega">Kakamega</option>
+                                        <option value="Kericho">Kericho</option>
+                                        <option value="Kiambu">Kiambu</option>
+                                        <option value="Kilifi">Kilifi</option>
+                                        <option value="Kirinyaga">Kirinyaga</option>
+                                        <option value="Kisii">Kisii</option>
+                                        <option value="Kisumu">Kisumu</option>
+                                        <option value="Kitui">Kitui</option>
+                                        <option value="Kwale">Kwale</option>
+                                        <option value="Laikipia">Laikipia</option>
+                                        <option value="Lamu">Lamu</option>
+                                        <option value="Machakos">Machakos</option>
+                                        <option value="Makueni">Makueni</option>
+                                        <option value="Mandera">Mandera</option>
+                                        <option value="Marsabit">Marsabit</option>
+                                        <option value="Meru">Meru</option>
+                                        <option value="Migori">Migori</option>
+                                        <option value="Mombasa">Mombasa</option>
+                                        <option value="Murang'a">Murang&#039;a</option>
+                                        <option value="Nairobi" selected="selected">Nairobi</option>
+                                        <option value="Nakuru">Nakuru</option>
+                                        <option value="Nandi">Nandi</option>
+                                        <option value="Narok">Narok</option>
+                                        <option value="Nyamira">Nyamira</option>
+                                        <option value="Nyandarua">Nyandarua</option>
+                                        <option value="Nyeri">Nyeri</option>
+                                        <option value="Samburu">Samburu</option>
+                                        <option value="Siaya">Siaya</option>
+                                        <option value="Taita-Taveta">Taita-Taveta</option>
+                                        <option value="Tana River">Tana River</option>
+                                        <option value="Tharaka-Nithi">Tharaka-Nithi</option>
+                                        <option value="Trans-Nzoia">Trans-Nzoia</option>
+                                        <option value="Turkana">Turkana</option>
+                                        <option value="Uasin Gishu">Uasin Gishu</option>
+                                        <option value="Vihiga">Vihiga</option>
+                                        <option value="Wajir">Wajir</option>
+                                        <option value="West Pokot">West Pokot</option>
+                                    </select>
+                                </div>
+                                <div class="col">
+                                    <label for="date">Year</label>
+                                    <input type="number" class="form-control " name="year" id="">
+                                </div>
+                                <div class="mt-4">
+                                    <button type="submit" class="btn btn-primary mt-2">
+                                        <i class="fa fa-search" aria-hidden="true"></i>
+                                        search
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+    <section class="content">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-12">
+              <!-- Map CHART -->
+              <div class="card card-primary">
+                <div class="card-header">
+                  <h3 class="card-title">Map Chart</h3>
+    
+                  <div class="card-tools">
+                    <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
+                    </button>
+                    <button type="button" class="btn btn-tool" data-card-widget="remove"><i
+                        class="fas fa-times"></i></button>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <div class="chart">
+                    <div id="map_div" style="height: 100%; width: 100%;"></div>
+                  </div>
+                </div>
+                <!-- /.card-body -->
+              </div>
+              <!-- /.card -->    
+            </div>
+            <!-- /.col (RIGHT) -->
+          </div>
+          <!-- /.row -->
+        </div><!-- /.container-fluid -->
+      </section>
+</div>
+<script>
+
+    let button = document.getElementById('button2')
+    button.addEventListener('click', loadUsers, true);
+
+    function loadUsers(){
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', "{% static 'dist/js/data.json' %}", true);
+  
+        xhr.onload = function(){
+          if(this.status == 200){
+            var users = JSON.parse(this.responseText);
+            
+            var output = '';
+            
+            for(var i in users){
+              output += '<ul>' +
+                '<li>ID: '+users[i].id+'</li>' +
+                '<li>Name: '+users[i].name+'</li>' +
+                '<li>Longitude: '+users[i].longitude+'</li>' +
+                '<li>Latitude: '+users[i].latitude+'</li>' +
+                '</ul>';
+            }
+  
+            document.getElementById('users').innerHTML = output;
+          }
+        }
+  
+        xhr.send();
+      }
+
+</script>
+{% endblock %}
