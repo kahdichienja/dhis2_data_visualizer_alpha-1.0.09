@@ -6,7 +6,10 @@ def charts(request):
     context = {}
     template_name = 'staff/charts.html'
     return render(request, template_name, context)
-
+def mapdata(request):
+    context = {}
+    template_name = 'staff/map.html'
+    return render(request, template_name, context)
 
 def dashboard(request):
     context = {}
