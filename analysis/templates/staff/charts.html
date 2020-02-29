@@ -229,7 +229,7 @@
       labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
       datasets: [{
         label: '# of Votes',
-        data: [12, 19, 3, 5, 2, 3],
+        data: [12, 19, 76, 5, 2, 3],
         backgroundColor: [
           'rgba(255, 99, 132, 0.2)',
           'rgba(54, 162, 235, 0.2)',
@@ -517,7 +517,7 @@
 
 
 
-  let endpoint2 = '/api/data_analysis/'
+  let endpoint2 = 'https://testhis.uonbi.ac.ke/api/29/analytics.json?dimension=ou:LEVEL-1;LEVEL-2;HfVjCurKxh2&filter=pe:2019&displayProperty=NAME&outputIdScheme=UID'
   $.ajax({
     method: "GET",
     url: endpoint2,
