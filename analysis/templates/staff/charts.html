@@ -1,0 +1,585 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <section class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+          <h1>ChartJS</h1>
+        </div>
+        <div class="col-sm-6">
+          <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item active">Indicators Charts</li>
+          </ol>
+        </div>
+        <div class="container">
+          <div class="row col-12">
+            <form action="" method="">
+              <div class="form-row">
+                <div class="col">
+                  <label for="filterby">filter by</label>
+                  <select class="form-control select2">
+                    <option disabled selected="selected">filter by</option>
+                    <option>Alaska</option>
+                    <option>California</option>
+                    <option>Delaware</option>
+                    <option>Tennessee</option>
+                    <option>Texas</option>
+                    <option>Washington</option>
+                  </select>
+                </div>
+                <div class="col">
+                  <label for="select">Select</label>
+                  <select class="form-control select2">
+                    <option selected="selected">--Select--</option>
+                    <option>Alaska</option>
+                    <option>California</option>
+                    <option>Delaware</option>
+                    <option>Tennessee</option>
+                    <option>Texas</option>
+                    <option>Washington</option>
+                  </select>
+                </div>
+                <div class="col">
+                  <label for="Week">Week</label>
+                  <input type="week" class="form-control " name="" id="">
+                </div>
+                <div class="col">
+                  <label for="date">Date</label>
+                  <input type="date" class="form-control " name="" id="">
+                </div>
+                <div class="col">
+                  <label for="Month">Month</label>
+                  <input type="month" class="form-control " name="" id="">
+                </div class="col">
+                <div class="mt-4">
+                  <button type="submit" class="btn btn-primary mt-2">search</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div><!-- /.container-fluid -->
+  </section>
+
+  <!-- Main content -->
+  <section class="content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-6">
+          <!-- AREA CHART -->
+          <div class="card card-primary">
+            <div class="card-header">
+              <h3 class="card-title">Radar Chart</h3>
+
+              <div class="card-tools">
+                <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-tool" data-card-widget="remove"><i
+                    class="fas fa-times"></i></button>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="chart">
+                <canvas id="areaChart"
+                  style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+              </div>
+            </div>
+            <!-- /.card-body -->
+          </div>
+          <!-- /.card -->
+
+          <!-- DONUT CHART -->
+          <div class="card card-danger">
+            <div class="card-header">
+              <h3 class="card-title">Donut Chart</h3>
+
+              <div class="card-tools">
+                <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-tool" data-card-widget="remove"><i
+                    class="fas fa-times"></i></button>
+              </div>
+            </div>
+            <div class="card-body">
+              <canvas id="donutChart"
+                style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+            </div>
+            <!-- /.card-body -->
+          </div>
+          <!-- /.card -->
+
+          <!-- PIE CHART -->
+          <div class="card card-danger">
+            <div class="card-header">
+              <h3 class="card-title">Pie Chart</h3>
+
+              <div class="card-tools">
+                <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-tool" data-card-widget="remove"><i
+                    class="fas fa-times"></i></button>
+              </div>
+            </div>
+            <div class="card-body">
+              <canvas id="pieChart"
+                style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+            </div>
+            <!-- /.card-body -->
+          </div>
+          <!-- /.card -->
+
+        </div>
+        <!-- /.col (LEFT) -->
+        <div class="col-md-6">
+          <!-- LINE CHART -->
+          <div class="card card-info">
+            <div class="card-header">
+              <h3 class="card-title">Line Chart</h3>
+
+              <div class="card-tools">
+                <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-tool" data-card-widget="remove"><i
+                    class="fas fa-times"></i></button>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="chart">
+                <canvas id="lineChart"
+                  style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+              </div>
+            </div>
+            <!-- /.card-body -->
+          </div>
+          <!-- /.card -->
+
+          <!-- BAR CHART -->
+          <div class="card card-success">
+            <div class="card-header">
+              <h3 class="card-title">Bar Chart</h3>
+
+              <div class="card-tools">
+                <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-tool" data-card-widget="remove"><i
+                    class="fas fa-times"></i></button>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="chart">
+                <canvas id="barChart"
+                  style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+              </div>
+            </div>
+            <!-- /.card-body -->
+          </div>
+          <!-- /.card -->
+
+          <!-- Ajax BAR CHART -->
+          <div class="card card-success">
+            <div class="card-header">
+              <h3 class="card-title">Ajax Chart</h3>
+
+              <div class="card-tools">
+                <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-tool" data-card-widget="remove"><i
+                    class="fas fa-times"></i></button>
+              </div>
+            </div>
+            <div class="card-body">
+              <button id="renderBtn">
+                Render
+              </button>
+              <div id="loadingMessage"></div>
+              <div class="chart">
+                <canvas id="ajax"
+                  style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+              </div>
+            </div>
+            <!-- /.card-body -->
+          </div>
+          <!-- /.card -->
+
+        </div>
+        <!-- /.col (RIGHT) -->
+      </div>
+      <!-- /.row -->
+    </div><!-- /.container-fluid -->
+  </section>
+  <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+<link rel="stylesheet" href="{% static 'dist/css/Chartjs.css' %}" />
+<script src="{% static 'dist/js/Chartjs.js' %}"></script>
+<script>
+  var ctx = document.getElementById('lineChart');
+  var myChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+      datasets: [{
+        label: '# of Votes',
+        data: [12, 19, 3, 5, 2, 3],
+        backgroundColor: [
+          'rgba(255, 99, 132, 0.2)',
+          'rgba(54, 162, 235, 0.2)',
+          'rgba(255, 206, 86, 0.2)',
+          'rgba(75, 192, 192, 0.2)',
+          'rgba(153, 102, 255, 0.2)',
+          'rgba(255, 159, 64, 0.2)'
+        ],
+        borderColor: [
+          'rgba(255, 99, 132, 1)',
+          'rgba(54, 162, 235, 1)',
+          'rgba(255, 206, 86, 1)',
+          'rgba(75, 192, 192, 1)',
+          'rgba(153, 102, 255, 1)',
+          'rgba(255, 159, 64, 1)'
+        ],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        yAxes: [{
+          ticks: {
+            beginAtZero: true
+          }
+        }]
+      }
+    }
+  });
+  var ctx = document.getElementById('pieChart');
+  var myChart = new Chart(ctx, {
+    type: 'pie',
+    data: {
+      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+      datasets: [{
+        label: '# of Votes',
+        data: [12, 19, 3, 5, 2, 3],
+        backgroundColor: [
+          'rgba(255, 99, 132, 0.2)',
+          'rgba(54, 162, 235, 0.2)',
+          'rgba(255, 206, 86, 0.2)',
+          'rgba(75, 192, 192, 0.2)',
+          'rgba(153, 102, 255, 0.2)',
+          'rgba(255, 159, 64, 0.2)'
+        ],
+        borderColor: [
+          'rgba(255, 99, 132, 1)',
+          'rgba(54, 162, 235, 1)',
+          'rgba(255, 206, 86, 1)',
+          'rgba(75, 192, 192, 1)',
+          'rgba(153, 102, 255, 1)',
+          'rgba(255, 159, 64, 1)'
+        ],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        yAxes: [{
+          ticks: {
+            beginAtZero: true
+          }
+        }]
+      }
+    }
+  });
+  var ctx = document.getElementById('barChart');
+  var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+      datasets: [{
+        label: '# of Votes',
+        data: [12, 19, 3, 5, 2, 3],
+        backgroundColor: [
+          'rgba(255, 99, 132, 0.2)',
+          'rgba(54, 162, 235, 0.2)',
+          'rgba(255, 206, 86, 0.2)',
+          'rgba(75, 192, 192, 0.2)',
+          'rgba(153, 102, 255, 0.2)',
+          'rgba(255, 159, 64, 0.2)'
+        ],
+        borderColor: [
+          'rgba(255, 99, 132, 1)',
+          'rgba(54, 162, 235, 1)',
+          'rgba(255, 206, 86, 1)',
+          'rgba(75, 192, 192, 1)',
+          'rgba(153, 102, 255, 1)',
+          'rgba(255, 159, 64, 1)'
+        ],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        yAxes: [{
+          ticks: {
+            beginAtZero: true
+          }
+        }]
+      }
+    }
+  });
+  var ctx = document.getElementById('areaChart');
+  var myChart = new Chart(ctx, {
+    //type: 'horizontalBar',
+    type: 'polarArea',
+    data: {
+      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+      datasets: [{
+        label: '# of Votes',
+        data: [12, 19, 3, 5, 2, 3],
+        backgroundColor: [
+          'rgba(255, 99, 132, 0.2)',
+          'rgba(54, 162, 235, 0.2)',
+          'rgba(255, 206, 86, 0.2)',
+          'rgba(75, 192, 192, 0.2)',
+          'rgba(153, 102, 255, 0.2)',
+          'rgba(255, 159, 64, 0.2)'
+        ],
+        borderColor: [
+          'rgba(255, 99, 132, 1)',
+          'rgba(54, 162, 235, 1)',
+          'rgba(255, 206, 86, 1)',
+          'rgba(75, 192, 192, 1)',
+          'rgba(153, 102, 255, 1)',
+          'rgba(255, 159, 64, 1)'
+        ],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        yAxes: [{
+          ticks: {
+            beginAtZero: true
+          }
+        }]
+      }
+    }
+  });
+  var ctx = document.getElementById('donutChart');
+  var myChart = new Chart(ctx, {
+    //type: 'horizontalBar',
+    type: 'doughnut',
+    data: {
+      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+      datasets: [{
+        label: '# of Votes',
+        data: [12, 19, 3, 5, 2, 3],
+        backgroundColor: [
+          'rgba(255, 99, 132, 0.2)',
+          'rgba(54, 162, 235, 0.2)',
+          'rgba(255, 206, 86, 0.2)',
+          'rgba(75, 192, 192, 0.2)',
+          'rgba(153, 102, 255, 0.2)',
+          'rgba(255, 159, 64, 0.2)'
+        ],
+        borderColor: [
+          'rgba(255, 99, 132, 1)',
+          'rgba(54, 162, 235, 1)',
+          'rgba(255, 206, 86, 1)',
+          'rgba(75, 192, 192, 1)',
+          'rgba(153, 102, 255, 1)',
+          'rgba(255, 159, 64, 1)'
+        ],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        yAxes: [{
+          ticks: {
+            beginAtZero: true
+          }
+        }]
+      }
+    }
+  });
+  var ctx = document.getElementById('bubble');
+  var myChart = new Chart(ctx, {
+    //type: 'horizontalBar',
+    type: 'bubble',
+    data: {
+      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+      datasets: [{
+        label: '# of Votes',
+        data: [12, 19, 3, 5, 2, 3],
+        backgroundColor: [
+          'rgba(255, 99, 132, 0.2)',
+          'rgba(54, 162, 235, 0.2)',
+          'rgba(255, 206, 86, 0.2)',
+          'rgba(75, 192, 192, 0.2)',
+          'rgba(153, 102, 255, 0.2)',
+          'rgba(255, 159, 64, 0.2)'
+        ],
+        borderColor: [
+          'rgba(255, 99, 132, 1)',
+          'rgba(54, 162, 235, 1)',
+          'rgba(255, 206, 86, 1)',
+          'rgba(75, 192, 192, 1)',
+          'rgba(153, 102, 255, 1)',
+          'rgba(255, 159, 64, 1)'
+        ],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        yAxes: [{
+          ticks: {
+            beginAtZero: true
+          }
+        }]
+      }
+    }
+  });
+
+
+
+
+  function float2dollar(value) {
+    return "U$ " + (value).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+  }
+
+  function renderChart(data, labels) {
+    var ctx = document.getElementById("ajax").getContext('2d');
+    var myChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: labels,
+        datasets: [
+          {
+            label: 'This week',
+            data: data[0],
+            borderColor: 'rgba(75, 192, 192, 1)',
+            backgroundColor: 'rgba(75, 192, 192, 0.2)',
+          },
+          {
+            label: 'Last week',
+            data: data[1],
+            borderColor: 'rgba(192, 192, 192, 1)',
+            backgroundColor: 'rgba(192, 192, 192, 0.2)',
+          }
+        ]
+      },
+      options: {
+        scales: {
+          yAxes: [{
+            ticks: {
+              beginAtZero: true,
+              callback: function (value, index, values) {
+                return float2dollar(value);
+              }
+            }
+          }]
+        },
+      }
+    });
+  }
+
+  function getChartData() {
+    $("#loadingMessage").html("<img src='{% static 'img/loading.gif' %}' alt='' srcset=''>");
+    $.ajax({
+      url: "{% static 'dist/js/data.json' %}",
+      success: function (result) {
+        $("#loadingMessage").html("");
+        var data = [];
+        data.push(result.thisWeek);
+        data.push(result.lastWeek);
+        var labels = result.labels;
+        renderChart(data, labels);
+      },
+      error: function (err) {
+        $("#loadingMessage").html("Error");
+      }
+    });
+  }
+
+  $("#renderBtn").click(
+    function () {
+      getChartData();
+    }
+  );
+
+
+
+  let endpoint2 = '/api/data_analysis/'
+  $.ajax({
+    method: "GET",
+    url: endpoint2,
+    success: function (data) {
+      let defaultData = []
+      let labels = []
+      labels = data.labels
+      defaultData = data.default
+      let ctx2 = document.getElementById("radar");
+      let radar = new Chart(ctx2, {
+        type: 'radar',
+        data: {
+          labels: labels,
+          datasets: [{
+            label: 'Number Of Births Per Month',
+            data: defaultData,
+            backgroundColor: [
+              '#2173fa',
+              '#7ce0d7',
+              '#e0b87c80',
+              '#7a13eab0',
+              '#ea5813a6',
+              '#6898e6',
+              '#7ce0d7',
+              '#2173fa',
+              '#6898e6',
+              '#e0b87c80',
+              '#7a13eab0',
+              '#ea5813a6',
+            ],
+            borderColor: [
+              '#7ce0d7',
+              '#2173fa',
+              '#6898e6',
+              '#e0b87c80',
+              '#7a13eab0',
+              '#ea5813a6',
+              '#7ce0d7',
+              '#2173fa',
+              '#6898e6',
+              '#e0b87c80',
+              '#7a13eab0',
+              '#ea5813a6',
+            ],
+            borderWith: 1
+          }]
+        },
+        optiions: {
+          scales: {
+            yaxes: [{
+              ticks: {
+                beginAtZero: true
+              }
+            }]
+          }
+        }
+      });
+    },
+    error: function (err_data) {
+      console.log("Erro:")
+      console.log(err_data)
+    }
+  });
+</script>
+{% endblock %}
