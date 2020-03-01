@@ -18,7 +18,7 @@ def charts(request):
     return render(request, template_name, context)
 def mapdata(request):
     context = {}
-    template_name = 'staff/map.html'
+    template_name = 'staff/kymao.html'
     return render(request, template_name, context)
 
 def dashboard(request):
