@@ -3,6 +3,7 @@ Django==3.0.3
 django-filter==2.2.0
 djangorestframework==3.11.0
 Markdown==3.2.1
+pkg-resources==0.0.0
 playsound==1.2.2
 pyttsx3==2.71
 pytz==2019.3
