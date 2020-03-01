@@ -195,14 +195,12 @@
                                 </option>`
                     //console.log(plots.organisation_unit_context[i].name)
                 }
-
-                if (plots.organisation_unit_context[i].name ==  plots.county_name_list[0]){
-                    document.getElementById('county_name_list').innerHTML = plots.organisation_unit_context[i].name;
-                }
                 document.getElementById('county').innerHTML = county
                 document.getElementById('indicator_context').innerHTML = output;
                 //breadcrumb name
-                
+                if (plots.organisation_unit_context[i].name ==  plots.county_name_list[0]){
+                    document.getElementById('county_name_list').innerHTML = plots.organisation_unit_context[i].name;
+                }
                 //horizontalBar
                 var ctx = document.getElementById('horizontalBar');
                 var period_list = []
