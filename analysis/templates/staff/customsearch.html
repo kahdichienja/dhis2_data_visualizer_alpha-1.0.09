@@ -1,0 +1,419 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1 id="county_name_list"></h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active">Indicators Charts</li>
+                    </ol>
+                </div>
+                <div class="container">
+                    <div class="row col-12">
+                        <form action="{% url 'analysis:customsearch' %}" method="GET">
+                            <div class="form-row">
+                                <div class="col">
+                                    <label for="filterby">Select Indicator</label>
+                                    <select class="form-control select2" name="indicatorparam" id="indicator_context">
+                                        <option disabled selected="selected">Filter by County</option>
+                                    </select>
+                                </div>
+
+                                <div class="col">
+                                    <label for="Week">Period (eg 2020)</label>
+                                    <input type="number" class="form-control " name="pe" id="">
+                                </div>
+                                <div class="col">
+                                    <label for="date">Select County</label>
+                                    <select class="form-control select2" name="ouid" id="county">
+                                        <option disabled selected="selected">Filter by County</option>
+                                    </select>
+                                </div>
+                                <div class="mt-4">
+                                    <button type="submit" class="btn btn-primary mt-2">search</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6">
+                    <!-- AREA CHART -->
+                    <div class="card card-primary">
+                        <div class="card-header">
+                            <h3 class="card-title">Pie Chart</h3>
+
+                            <div class="card-tools">
+                                <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
+                                        class="fas fa-minus"></i>
+                                </button>
+                                <button type="button" class="btn btn-tool" data-card-widget="remove"><i
+                                        class="fas fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="chart">
+                                <canvas id="pieChart"
+                                    style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                            </div>
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+                    <!-- /.card -->
+
+                    <!-- DONUT CHART -->
+                    <div class="card card-danger">
+                        <div class="card-header">
+                            <h3 class="card-title">Horzontal Chart</h3>
+
+                            <div class="card-tools">
+                                <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
+                                        class="fas fa-minus"></i>
+                                </button>
+                                <button type="button" class="btn btn-tool" data-card-widget="remove"><i
+                                        class="fas fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <canvas id="horizontalBar"
+                                style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+                    <!-- /.card -->
+
+
+                </div>
+                <!-- /.col (LEFT) -->
+                <div class="col-md-6">
+                    <!-- LINE CHART -->
+                    <div class="card card-info">
+                        <div class="card-header">
+                            <h3 class="card-title">Line Chart</h3>
+
+                            <div class="card-tools">
+                                <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
+                                        class="fas fa-minus"></i>
+                                </button>
+                                <button type="button" class="btn btn-tool" data-card-widget="remove"><i
+                                        class="fas fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="chart">
+                                <canvas id="lineChart"
+                                    style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                            </div>
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+                    <!-- /.card -->
+
+                    <!-- BAR CHART -->
+                    <div class="card card-success">
+                        <div class="card-header">
+                            <h3 class="card-title">Bar Chart</h3>
+
+                            <div class="card-tools">
+                                <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
+                                        class="fas fa-minus"></i>
+                                </button>
+                                <button type="button" class="btn btn-tool" data-card-widget="remove"><i
+                                        class="fas fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="chart">
+                                <canvas id="barChart"
+                                    style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                            </div>
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+                    <!-- /.card -->
+
+                </div>
+                <!-- /.col (RIGHT) -->
+            </div>
+            <!-- /.row -->
+        </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+<link rel="stylesheet" href="{% static 'dist/css/Chartjs.css' %}" />
+<script src="{% static 'dist/js/Chartjs.js' %}"></script>
+<script>
+
+    function performAjaxcall() {
+        
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', "/api/endpoint/", true);
+
+        xhr.onload = function () {
+            if (this.status == 200) {
+                var plots = JSON.parse(this.responseText);
+
+                var output = '';
+                var counties = '';
+                
+
+                for (var i in plots) {
+
+                    //output += `<option value="${plots[i][0].name}">${plots[i][0].name}</option>`
+                }
+
+                document.getElementById('indicator_context').innerHTML = output;
+                //console.log(plots.indicator_context)
+
+                for (var i in plots.indicator_context){
+                    output += `<option value="${plots.indicator_context[i].id}">${plots.indicator_context[i].name}</option>`
+                    //console.log(plots.indicator_context[i].name)
+                }
+                for (var i in plots.organisation_unit_context){
+                    county += ` <option 
+                                    value="${plots.organisation_unit_context[i].id}">
+                                    ${plots.organisation_unit_context[i].name}
+                                </option>`
+                    //console.log(plots.organisation_unit_context[i].name)
+                }
+                document.getElementById('county').innerHTML = county
+                document.getElementById('indicator_context').innerHTML = output;
+                //breadcrumb name
+                if (plots.organisation_unit_context[i].name ==  plots.county_name_list[0]){
+                    document.getElementById('county_name_list').innerHTML = plots.organisation_unit_context[i].name;
+                }
+                //horizontalBar
+                var ctx = document.getElementById('horizontalBar');
+                var period_list = []
+                var myChart = new Chart(ctx, {
+                    type: 'horizontalBar',
+                    data: {
+                        //labels: ["Red", 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                        labels: plots.period_list,
+                        datasets: [{
+                            label: '# of Votes',
+                            data: plots.value_list,
+                            backgroundColor: [
+                                'rgba(255, 99, 132, 0.2)',
+                                'rgba(54, 162, 235, 0.2)',
+                                'rgba(255, 206, 86, 0.2)',
+                                'rgba(75, 192, 192, 0.2)',
+                                'rgba(153, 102, 255, 0.2)',
+                                'rgba(255, 159, 64, 0.2)'
+                            ],
+                            borderColor: [
+                                'rgba(255, 99, 132, 1)',
+                                'rgba(54, 162, 235, 1)',
+                                'rgba(255, 206, 86, 1)',
+                                'rgba(75, 192, 192, 1)',
+                                'rgba(153, 102, 255, 1)',
+                                'rgba(255, 159, 64, 1)'
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            yAxes: [{
+                                ticks: {
+                                    beginAtZero: true
+                                }
+                            }]
+                        }
+                    }
+                });
+
+
+                //bar
+                var ctx = document.getElementById('barChart');
+                var period_list = []
+                var myChart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        //labels: ["Red", 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                        labels: plots.period_list,
+                        datasets: [{
+                            label: '# of Votes',
+                            data: plots.value_list,
+                            backgroundColor: [
+                                'rgba(255, 99, 132, 0.2)',
+                                'rgba(54, 162, 235, 0.2)',
+                                'rgba(255, 206, 86, 0.2)',
+                                'rgba(75, 192, 192, 0.2)',
+                                'rgba(153, 102, 255, 0.2)',
+                                'rgba(255, 159, 64, 0.2)'
+                            ],
+                            borderColor: [
+                                'rgba(255, 99, 132, 1)',
+                                'rgba(54, 162, 235, 1)',
+                                'rgba(255, 206, 86, 1)',
+                                'rgba(75, 192, 192, 1)',
+                                'rgba(153, 102, 255, 1)',
+                                'rgba(255, 159, 64, 1)'
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            yAxes: [{
+                                ticks: {
+                                    beginAtZero: true
+                                }
+                            }]
+                        }
+                    }
+                });
+
+                //pieChart
+                var ctx = document.getElementById('pieChart');
+                var period_list = []
+                var myChart = new Chart(ctx, {
+                    type: 'pie',
+                    data: {
+                        //labels: ["Red", 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                        labels: plots.period_list,
+                        datasets: [{
+                            label: '# of Votes',
+                            data: plots.value_list,
+                            backgroundColor: [
+                                'rgba(255, 99, 132, 0.2)',
+                                'rgba(54, 162, 235, 0.2)',
+                                'rgba(255, 206, 86, 0.2)',
+                                'rgba(75, 192, 192, 0.2)',
+                                'rgba(153, 102, 255, 0.2)',
+                                'rgba(255, 159, 64, 0.2)'
+                            ],
+                            borderColor: [
+                                'rgba(255, 99, 132, 1)',
+                                'rgba(54, 162, 235, 1)',
+                                'rgba(255, 206, 86, 1)',
+                                'rgba(75, 192, 192, 1)',
+                                'rgba(153, 102, 255, 1)',
+                                'rgba(255, 159, 64, 1)'
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            yAxes: [{
+                                ticks: {
+                                    beginAtZero: true
+                                }
+                            }]
+                        }
+                    }
+                });
+                //lineChart
+                var ctx = document.getElementById('lineChart');
+                var period_list = []
+                var myChart = new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        //labels: ["Red", 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                        labels: plots.period_list,
+                        datasets: [{
+                            label: '# of Votes',
+                            data: plots.value_list,
+                            backgroundColor: [
+                                'rgba(255, 99, 132, 0.2)',
+                                'rgba(54, 162, 235, 0.2)',
+                                'rgba(255, 206, 86, 0.2)',
+                                'rgba(75, 192, 192, 0.2)',
+                                'rgba(153, 102, 255, 0.2)',
+                                'rgba(255, 159, 64, 0.2)'
+                            ],
+                            borderColor: [
+                                'rgba(255, 99, 132, 1)',
+                                'rgba(54, 162, 235, 1)',
+                                'rgba(255, 206, 86, 1)',
+                                'rgba(75, 192, 192, 1)',
+                                'rgba(153, 102, 255, 1)',
+                                'rgba(255, 159, 64, 1)'
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            yAxes: [{
+                                ticks: {
+                                    beginAtZero: true
+                                }
+                            }]
+                        }
+                    }
+                });
+
+            }
+        }
+
+        xhr.send();
+
+
+    }
+
+    window.onload = performAjaxcall;
+
+
+    var ctx = document.getElementById('lineChart');
+    var period_list = []
+    var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            //labels: ["Red", 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+            labels: "{{ period_list }}",
+            datasets: [{
+                label: '# of Votes',
+                data: [12, 19, 3, 5, 2, 3],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
+    });
+</script>
+{% endblock %}

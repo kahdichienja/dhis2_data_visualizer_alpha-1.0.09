@@ -2,7 +2,37 @@
 {% load static %}
 
 {% block content %}
+<<<<<<< HEAD
 
+=======
+<script>
+    google.charts.load("current", {
+        "packages": ["map"],
+        // Note: you will need to get a mapsApiKey for your project.
+        // See: https://developers.google.com/chart/interactive/docs/basic_load_libs#load-settings
+        "mapsApiKey": "AIzaSyCWC47OOAZDFRmx8pgKyWIk9qw9d7qkKKE"
+    });
+    google.charts.setOnLoadCallback(drawChart);
+    function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+            ['Lat', 'Long', 'Name'],
+            [-0.09880, 34.75706, 'Nakuru'],
+            [-0.09880, 34.75706, 'Kisumu'],
+            [3.2285332, 40.7056165, 'Mandera'],
+            [3.1166086,35.6000028, 'Lodwar'],
+            [-4.05052,39.667169, 'mombasa'],
+            [-1.0211616,34.3096432, 'Migori'],
+
+        ]);
+
+        var map = new google.visualization.Map(document.getElementById('map_div'));
+        map.draw(data, {
+            showTooltip: true,
+            showInfoWindow: true
+        });
+    }
+</script>
+>>>>>>> 10f997096a867479162ec4e1a35a3a575179325d
 
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
@@ -66,7 +96,7 @@
                             <p>Data Sets</p>
                         </div>
                         <div class="icon">
-                            <i class="ion ion-stats-bars"></i>
+                            <i class="fas fa-file fa-xs"></i>
                         </div>
 
                     </div>
@@ -105,7 +135,11 @@
                                         <a class="nav-link active" href="#revenue-chart" data-toggle="tab">Area graph</a>
                                     </li>
                                     <li class="nav-item">
+<<<<<<< HEAD
                                         <a class="nav-link" href="#sales-chart" data-toggle="tab">Donut-representa</a>
+=======
+                                        <a class="nav-link" href="#sales-chart" data-toggle="tab">Donut-representation</a>
+>>>>>>> 10f997096a867479162ec4e1a35a3a575179325d
                                     </li>
                                 </ul>
                             </div>
@@ -123,6 +157,7 @@
                             </div>
                         </div><!-- /.card-body -->
                     </div>
+<<<<<<< HEAD
                     <!-- /.card -->
                     <!-- PIE CHART -->
                      <div class="card card-danger"> 
@@ -144,6 +179,8 @@
                          <!-- /.card-body -->
                     </div> -->
                     <!-- /.card -->
+=======
+>>>>>>> 10f997096a867479162ec4e1a35a3a575179325d
                    
                 </section>
                 <!-- /.Left col -->
@@ -173,6 +210,27 @@
                         </div>
                         <div class="card-body">
                             <div id="world-map" style="height: 250px; width: 100%;"></div>
+                        </div>
+                        <!-- /.card-body-->
+                        <div class="card-footer bg-transparent">
+                            <div class="row">
+                                <div class="col-4 text-center">
+                                    <div id="sparkline-1"></div>
+                                    <div class="text-white">Value A</div>
+                                </div>
+                                <!-- ./col -->
+                                <div class="col-4 text-center">
+                                    <div id="sparkline-2"></div>
+                                    <div class="text-white">value B</div>
+                                </div>
+                                <!-- ./col -->
+                                <div class="col-4 text-center">
+                                    <div id="sparkline-3"></div>
+                                    <div class="text-white">Value C</div>
+                                </div>
+                                <!-- ./col -->
+                            </div>
+                            <!-- /.row -->
                         </div>
                         <!-- /.card-body-->
                         <div class="card-footer bg-transparent">
