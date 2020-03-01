@@ -26,12 +26,27 @@
                 <div class="col">
                   <label for="filterby">filter by</label>
                   <select class="form-control select2">
-                    <option disabled selected="selected">filter by County</option>
-                    <option>Migori</option>
-                    <option>Homabay</option>
+                    <option disabled selected="selected">filter by</option>
+                    <option>Alaska</option>
+                    <option>California</option>
+                    <option>Delaware</option>
+                    <option>Tennessee</option>
+                    <option>Texas</option>
+                    <option>Washington</option>
                   </select>
                 </div>
-                
+                <div class="col">
+                  <label for="select">Select</label>
+                  <select class="form-control select2">
+                    <option selected="selected">--Select--</option>
+                    <option>Alaska</option>
+                    <option>California</option>
+                    <option>Delaware</option>
+                    <option>Tennessee</option>
+                    <option>Texas</option>
+                    <option>Washington</option>
+                  </select>
+                </div>
                 <div class="col">
                   <label for="Week">Week</label>
                   <input type="week" class="form-control " name="" id="">
@@ -139,7 +154,7 @@
             </div>
             <div class="card-body">
               <div class="chart">
-                <canvas id="LineChart"
+                <canvas id="lineChart"
                   style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
               </div>
             </div>
@@ -502,24 +517,18 @@
 
 
 
-<<<<<<< HEAD
   let endpoint2 = 'https://testhis.uonbi.ac.ke/api/29/analytics.json?dimension=ou:LEVEL-1;LEVEL-2;HfVjCurKxh2&filter=pe:2019&displayProperty=NAME&outputIdScheme=UID'
-=======
-  let endpoint2 = '/api/endpoint/'
->>>>>>> 10f997096a867479162ec4e1a35a3a575179325d
   $.ajax({
     method: "GET",
     url: endpoint2,
     success: function (data) {
       let defaultData = []
       let labels = []
-      labels = JSON.stringify(data.period_list)
-      defaultData = JSON.stringify(data.value_list)
-      //label = JSON.parse("{{period_list|safe}}")
-      //defaultData = JSON.parse("{{value_list|safe}}")
-      let ctx2 = document.getElementById("LineChart");
+      labels = data.labels
+      defaultData = data.default
+      let ctx2 = document.getElementById("radar");
       let radar = new Chart(ctx2, {
-        type: 'line',
+        type: 'radar',
         data: {
           labels: labels,
           datasets: [{
@@ -566,14 +575,11 @@
           }
         }
       });
-    
-    
     },
     error: function (err_data) {
       console.log("Erro:")
       console.log(err_data)
     }
-  });ModuleNotFoundError: No module named 'requests'
-
+  })
 </script>
 {% endblock %}

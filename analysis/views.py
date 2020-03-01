@@ -16,21 +16,21 @@ def charts(request):
     context = {}
     template_name = 'staff/chat.html'
     return render(request, template_name, context)
-<<<<<<< HEAD
+# <<<<<<< HEAD
 
-=======
+# =======
 def mapdata(request):
     context = {}
     template_name = 'staff/kymao.html'
     return render(request, template_name, context)
->>>>>>> 10f997096a867479162ec4e1a35a3a575179325d
+# >>>>>>> 10f997096a867479162ec4e1a35a3a575179325d
 
 def dashboard(request):
     context = {}
     template_name = 'staff/dashboard.html'
     return render(request, template_name, context)
-<<<<<<< HEAD
-=======
+# <<<<<<< HEAD
+# =======
 
 def coverts_period_date(period):
     period_str = str(period)
@@ -210,4 +210,4 @@ def customSearchView(request):
 #     template_name = 'staff/prediction.html'
 #
 #     return render(request, template_name, context)
->>>>>>> 10f997096a867479162ec4e1a35a3a575179325d
+# >>>>>>> 10f997096a867479162ec4e1a35a3a575179325d
