@@ -26,27 +26,12 @@
                 <div class="col">
                   <label for="filterby">filter by</label>
                   <select class="form-control select2">
-                    <option disabled selected="selected">filter by</option>
-                    <option>Alaska</option>
-                    <option>California</option>
-                    <option>Delaware</option>
-                    <option>Tennessee</option>
-                    <option>Texas</option>
-                    <option>Washington</option>
+                    <option disabled selected="selected">filter by County</option>
+                    <option>Migori</option>
+                    <option>Homabay</option>
                   </select>
                 </div>
-                <div class="col">
-                  <label for="select">Select</label>
-                  <select class="form-control select2">
-                    <option selected="selected">--Select--</option>
-                    <option>Alaska</option>
-                    <option>California</option>
-                    <option>Delaware</option>
-                    <option>Tennessee</option>
-                    <option>Texas</option>
-                    <option>Washington</option>
-                  </select>
-                </div>
+                
                 <div class="col">
                   <label for="Week">Week</label>
                   <input type="week" class="form-control " name="" id="">
@@ -154,7 +139,7 @@
             </div>
             <div class="card-body">
               <div class="chart">
-                <canvas id="lineChart"
+                <canvas id="LineChart"
                   style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
               </div>
             </div>
@@ -517,18 +502,20 @@
 
 
 
-  let endpoint2 = '/api/data_analysis/'
+  let endpoint2 = '/api/endpoint/'
   $.ajax({
     method: "GET",
     url: endpoint2,
     success: function (data) {
       let defaultData = []
       let labels = []
-      labels = data.labels
-      defaultData = data.default
-      let ctx2 = document.getElementById("radar");
+      labels = JSON.stringify(data.period_list)
+      defaultData = JSON.stringify(data.value_list)
+      //label = JSON.parse("{{period_list|safe}}")
+      //defaultData = JSON.parse("{{value_list|safe}}")
+      let ctx2 = document.getElementById("LineChart");
       let radar = new Chart(ctx2, {
-        type: 'radar',
+        type: 'line',
         data: {
           labels: labels,
           datasets: [{
@@ -575,6 +562,8 @@
           }
         }
       });
+    
+    
     },
     error: function (err_data) {
       console.log("Erro:")

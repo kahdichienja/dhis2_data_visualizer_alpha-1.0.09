@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block content %}
-<script type="text/javascript">
+<script>
     google.charts.load("current", {
         "packages": ["map"],
         // Note: you will need to get a mapsApiKey for your project.
@@ -13,10 +13,13 @@
     function drawChart() {
         var data = google.visualization.arrayToDataTable([
             ['Lat', 'Long', 'Name'],
-            //,34.75706
-            [-0.09880, 34.75706, 'Kenya'],
-            [-0.09880, 34.75706, 'Kenya'],
-            [-0.19880, 35.75706, 'Kenya'],
+            [-0.09880, 34.75706, 'Nakuru'],
+            [-0.09880, 34.75706, 'Kisumu'],
+            [3.2285332, 40.7056165, 'Mandera'],
+            [3.1166086,35.6000028, 'Lodwar'],
+            [-4.05052,39.667169, 'mombasa'],
+            [-1.0211616,34.3096432, 'Migori'],
+
         ]);
 
         var map = new google.visualization.Map(document.getElementById('map_div'));
@@ -25,8 +28,8 @@
             showInfoWindow: true
         });
     }
-
 </script>
+
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -56,7 +59,7 @@
                     <!-- small box -->
                     <div class="small-box bg-info">
                         <div class="inner">
-                            <h3>150</h3>
+                            <h3>5</h3>
 
                             <p>Indicators</p>
                         </div>
@@ -70,7 +73,7 @@
                     <!-- small box -->
                     <div class="small-box bg-success">
                         <div class="inner">
-                            <h3>53<sup style="font-size: 20px">%</sup></h3>
+                            <h3>2<sup style="font-size: 20px">%</sup></h3>
 
                             <p>Data Elements</p>
                         </div>
@@ -84,12 +87,12 @@
                     <!-- small box -->
                     <div class="small-box bg-warning">
                         <div class="inner">
-                            <h3>44</h3>
+                            <h3>2</h3>
 
                             <p>Data Sets</p>
                         </div>
                         <div class="icon">
-                            <i class="ion ion-stats-bars"></i>
+                            <i class="fas fa-file fa-xs"></i>
                         </div>
 
                     </div>
@@ -99,7 +102,7 @@
                     <!-- small box -->
                     <div class="small-box bg-danger">
                         <div class="inner">
-                            <h3>65</h3>
+                            <h3>2</h3>
 
                             <p>Program Indicators</p>
                         </div>
@@ -119,16 +122,16 @@
                     <div class="card">
                         <div class="card-header">
                             <h3 class="card-title">
-                                <i class="fas fa-chart-pie mr-1"></i>
-                                Sales
+                                <i class="fas fa-user mr-1"></i>
+                                Rate of births
                             </h3>
                             <div class="card-tools">
                                 <ul class="nav nav-pills ml-auto">
                                     <li class="nav-item">
-                                        <a class="nav-link active" href="#revenue-chart" data-toggle="tab">Area</a>
+                                        <a class="nav-link active" href="#revenue-chart" data-toggle="tab">Area graph</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#sales-chart" data-toggle="tab">Donut</a>
+                                        <a class="nav-link" href="#sales-chart" data-toggle="tab">Donut-representation</a>
                                     </li>
                                 </ul>
                             </div>
@@ -146,27 +149,7 @@
                             </div>
                         </div><!-- /.card-body -->
                     </div>
-                    <!-- /.card -->
-                    <!-- PIE CHART -->
-                    <div class="card card-danger">
-                        <div class="card-header">
-                            <h3 class="card-title">Pie Chart</h3>
-
-                            <div class="card-tools">
-                                <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
-                                        class="fas fa-minus"></i>
-                                </button>
-                                <button type="button" class="btn btn-tool" data-card-widget="remove"><i
-                                        class="fas fa-times"></i></button>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <canvas id="pieChart"
-                                style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
-                        </div>
-                        <!-- /.card-body -->
-                    </div>
-                    <!-- /.card -->
+                   
                 </section>
                 <!-- /.Left col -->
                 <!-- SELECT2 EXAMPLE -->
@@ -178,7 +161,7 @@
                         <div class="card-header border-0">
                             <h3 class="card-title">
                                 <i class="fas fa-map-marker-alt mr-1"></i>
-                                Visitors
+                                Country-wide Distribution
                             </h3>
                             <!-- card tools -->
                             <div class="card-tools">
@@ -196,14 +179,36 @@
                         <div class="card-body">
                             <div id="map_div" style="height: 100%; width: 100%;"></div>
                         </div>
+                        <!-- /.card-body-->
+                        <div class="card-footer bg-transparent">
+                            <div class="row">
+                                <div class="col-4 text-center">
+                                    <div id="sparkline-1"></div>
+                                    <div class="text-white">Value A</div>
+                                </div>
+                                <!-- ./col -->
+                                <div class="col-4 text-center">
+                                    <div id="sparkline-2"></div>
+                                    <div class="text-white">value B</div>
+                                </div>
+                                <!-- ./col -->
+                                <div class="col-4 text-center">
+                                    <div id="sparkline-3"></div>
+                                    <div class="text-white">Value C</div>
+                                </div>
+                                <!-- ./col -->
+                            </div>
+                            <!-- /.row -->
+                        </div>
                     </div>
                     <!-- /.card -->
+
                     <!-- solid sales graph -->
                     <div class="card bg-gradient-info">
                         <div class="card-header border-0">
                             <h3 class="card-title">
                                 <i class="fas fa-th mr-1"></i>
-                                Sales Graph
+                            Successful treatments
                             </h3>
 
                             <div class="card-tools">
@@ -216,7 +221,35 @@
                             </div>
                         </div>
                         <div class="card-body">
-                            <canvas class="chart" id="line-chart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                            <canvas class="chart" id="line-chart"
+                                style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                        </div>
+                        <!-- /.card-body -->
+                        <div class="card-footer bg-transparent">
+                            <div class="row">
+                                <div class="col-4 text-center">
+                                    <input type="text" class="knob" data-readonly="true" value="20" data-width="60"
+                                        data-height="60" data-fgColor="#39CCCC">
+
+                                    <div class="text-white">Malaria</div>
+                                </div>
+                                <!-- ./col -->
+                                <div class="col-4 text-center">
+                                    <input type="text" class="knob" data-readonly="true" value="50" data-width="60"
+                                        data-height="60" data-fgColor="#39CCCC">
+
+                                    <div class="text-white">Tuberculosis</div>
+                                </div>
+                                <!-- ./col -->
+                                <div class="col-4 text-center">
+                                    <input type="text" class="knob" data-readonly="true" value="30" data-width="60"
+                                        data-height="60" data-fgColor="#39CCCC">
+
+                                    <div class="text-white">STI(s)</div>
+                                </div>
+                                <!-- ./col -->
+                            </div>
+                            <!-- /.row -->
                         </div>
                         <!-- /.card-footer -->
                     </div>

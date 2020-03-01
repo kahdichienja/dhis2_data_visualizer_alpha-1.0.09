@@ -1,0 +1,1378 @@
+{
+    "headers": [
+        {
+            "name": "dx",
+            "column": "Data",
+            "valueType": "TEXT",
+            "type": "java.lang.String",
+            "hidden": false,
+            "meta": true
+        },
+        {
+            "name": "ou",
+            "column": "Organisation unit",
+            "valueType": "TEXT",
+            "type": "java.lang.String",
+            "hidden": false,
+            "meta": true
+        },
+        {
+            "name": "value",
+            "column": "Value",
+            "valueType": "NUMBER",
+            "type": "java.lang.Double",
+            "hidden": false,
+            "meta": false
+        }
+    ],
+    "metaData": {
+        "items": {
+            "wsBsC6gjHvn": {
+                "name": "Mombasa County"
+            },
+            "KKAQM3KkDtD": {
+                "name": "Population 6-11 Months (50% of <1yrs)"
+            },
+            "IN2v5E9RtUD": {
+                "name": "Population  6-23 Months (30 % of < 5yrs)"
+            },
+            "BoDytkJQ4Qi": {
+                "name": "Makueni County"
+            },
+            "nK0A12Q7MvS": {
+                "name": "Homa Bay County"
+            },
+            "HNt8E6osxJg": {
+                "name": "Population 6-59 Months (90% of < 5yrs)"
+            },
+            "ob6SxuRcqU4": {
+                "name": "Nakuru County"
+            },
+            "fVra3Pwta0Q": {
+                "name": "Migori County"
+            },
+            "kphDeKClFch": {
+                "name": "Turkana County"
+            },
+            "dx": {
+                "name": "Data"
+            },
+            "mYZacFNIB3h": {
+                "name": "Nyandarua County"
+            },
+            "T4urHM47nlm": {
+                "name": "Tharaka Nithi County"
+            },
+            "mi8PCw0akC3": {
+                "name": "Population Male of  the total Population"
+            },
+            "PFu8alU2KWG": {
+                "name": "Embu County"
+            },
+            "bzOfj0iwfDH": {
+                "name": "Isiolo County"
+            },
+            "t0J75eHKxz5": {
+                "name": "Nandi County"
+            },
+            "CeLsrJOH0g9": {
+                "name": "Wajir County"
+            },
+            "nrI2khZx3d0": {
+                "name": "Kilifi County"
+            },
+            "MqnLxQBigG0": {
+                "name": "Elgeyo-Marakwet County"
+            },
+            "QyGNX2DpR4h": {
+                "name": "Taita Taveta County"
+            },
+            "HfVjCurKxh2": {
+                "name": "Kenya"
+            },
+            "sANMZ3lpqGs": {
+                "name": "Vihiga County"
+            },
+            "lt3ceZWgUhD": {
+                "name": "Population female of  the total Population"
+            },
+            "R6f9znhg37c": {
+                "name": "Mandera County"
+            },
+            "kqJ83J2D72s": {
+                "name": "Narok County"
+            },
+            "XWALbfAPa6n": {
+                "name": "West Pokot County"
+            },
+            "dH7s8QGAcfX": {
+                "name": "Population 60+ years of  the total Population"
+            },
+            "yhCUgGcCcOo": {
+                "name": "Machakos County"
+            },
+            "Ulj33KBau7V": {
+                "name": "Kirinyaga County"
+            },
+            "jkG3zaihdSs": {
+                "name": "Nairobi County"
+            },
+            "JsH2bnvNt2d": {
+                "name": "Tana River County"
+            },
+            "u4t9H8XyU9P": {
+                "name": "Siaya County"
+            },
+            "o36zCRjSd4G": {
+                "name": "Samburu County"
+            },
+            "vvOK1BxTbet": {
+                "name": "Baringo County"
+            },
+            "Hsk1YV8kHkT": {
+                "name": "Kajiado County"
+            },
+            "HMNARUV2CW4": {
+                "name": "Bomet County"
+            },
+            "pZqQRRW7PHP": {
+                "name": "Uasin Gishu County"
+            },
+            "ihZsJ8alvtb": {
+                "name": "Kericho County"
+            },
+            "qKzosKQPl6G": {
+                "name": "Kiambu County"
+            },
+            "uyOrcHZBpW0": {
+                "name": "Garissa County"
+            },
+            "Y52XNJ50hYb": {
+                "name": "Meru County"
+            },
+            "ptWVfaCIdVx": {
+                "name": "Nyeri County"
+            },
+            "sPkRcDvhGWA": {
+                "name": "Kisii County"
+            },
+            "xuFdFy6t9AH": {
+                "name": "Laikipia County"
+            },
+            "PRmlwO3ht2T": {
+                "name": "Population 25-59 years to the total Population"
+            },
+            "mzHTre1yUfv": {
+                "name": "Population 12-59 Months (80% of < 5yrs)"
+            },
+            "NjWSbQTwys4": {
+                "name": "Lamu County"
+            },
+            "ahwTMNAJvrL": {
+                "name": "Muranga County"
+            },
+            "j8o6iO4Njsi": {
+                "name": "Kitui County"
+            },
+            "ou": {
+                "name": "Organisation unit"
+            },
+            "2019": {
+                "name": "2019"
+            },
+            "N7YETT3A9r1": {
+                "name": "Kwale County"
+            },
+            "uepLTG8wGWJ": {
+                "name": "Nyamira County"
+            },
+            "pe": {
+                "name": "Period"
+            },
+            "tAbBVBbueqD": {
+                "name": "Kisumu County"
+            },
+            "KGHhQ5GLd4k": {
+                "name": "Bungoma County"
+            },
+            "Tvf1zgVZ0K4": {
+                "name": "Busia County"
+            },
+            "mThvosEflAU": {
+                "name": "Trans-Nzoia County"
+            },
+            "BjC1xL40gHo": {
+                "name": "Kakamega County"
+            },
+            "Eey8fT4Im3y": {
+                "name": "Marsabit County"
+            }
+        },
+        "dimensions": {
+            "dx": [
+                "lt3ceZWgUhD",
+                "mi8PCw0akC3",
+                "mzHTre1yUfv",
+                "PRmlwO3ht2T",
+                "dH7s8QGAcfX",
+                "KKAQM3KkDtD",
+                "IN2v5E9RtUD",
+                "HNt8E6osxJg"
+            ],
+            "pe": [
+                "2019"
+            ],
+            "ou": [
+                "vvOK1BxTbet",
+                "HMNARUV2CW4",
+                "KGHhQ5GLd4k",
+                "Tvf1zgVZ0K4",
+                "MqnLxQBigG0",
+                "PFu8alU2KWG",
+                "uyOrcHZBpW0",
+                "nK0A12Q7MvS",
+                "bzOfj0iwfDH",
+                "Hsk1YV8kHkT",
+                "BjC1xL40gHo",
+                "HfVjCurKxh2",
+                "ihZsJ8alvtb",
+                "qKzosKQPl6G",
+                "nrI2khZx3d0",
+                "Ulj33KBau7V",
+                "sPkRcDvhGWA",
+                "tAbBVBbueqD",
+                "j8o6iO4Njsi",
+                "N7YETT3A9r1",
+                "xuFdFy6t9AH",
+                "NjWSbQTwys4",
+                "yhCUgGcCcOo",
+                "BoDytkJQ4Qi",
+                "R6f9znhg37c",
+                "Eey8fT4Im3y",
+                "Y52XNJ50hYb",
+                "fVra3Pwta0Q",
+                "wsBsC6gjHvn",
+                "ahwTMNAJvrL",
+                "jkG3zaihdSs",
+                "ob6SxuRcqU4",
+                "t0J75eHKxz5",
+                "kqJ83J2D72s",
+                "uepLTG8wGWJ",
+                "mYZacFNIB3h",
+                "ptWVfaCIdVx",
+                "o36zCRjSd4G",
+                "u4t9H8XyU9P",
+                "QyGNX2DpR4h",
+                "JsH2bnvNt2d",
+                "T4urHM47nlm",
+                "mThvosEflAU",
+                "kphDeKClFch",
+                "pZqQRRW7PHP",
+                "sANMZ3lpqGs",
+                "CeLsrJOH0g9",
+                "XWALbfAPa6n"
+            ],
+            "co": []
+        }
+    },
+    "rows": [
+        [
+            "lt3ceZWgUhD",
+            "MqnLxQBigG0",
+            "50.2"
+        ],
+        [
+            "lt3ceZWgUhD",
+            "PFu8alU2KWG",
+            "50.7"
+        ],
+        [
+            "lt3ceZWgUhD",
+            "uyOrcHZBpW0",
+            "48.2"
+        ],
+        [
+            "lt3ceZWgUhD",
+            "HfVjCurKxh2",
+            "49.6"
+        ],
+        [
+            "lt3ceZWgUhD",
+            "qKzosKQPl6G",
+            "50.7"
+        ],
+        [
+            "lt3ceZWgUhD",
+            "Ulj33KBau7V",
+            "50.6"
+        ],
+        [
+            "lt3ceZWgUhD",
+            "sPkRcDvhGWA",
+            "51.2"
+        ],
+        [
+            "lt3ceZWgUhD",
+            "tAbBVBbueqD",
+            "51.6"
+        ],
+        [
+            "lt3ceZWgUhD",
+            "j8o6iO4Njsi",
+            "52.8"
+        ],
+        [
+            "lt3ceZWgUhD",
+            "N7YETT3A9r1",
+            "51.1"
+        ],
+        [
+            "lt3ceZWgUhD",
+            "yhCUgGcCcOo",
+            "50.6"
+        ],
+        [
+            "lt3ceZWgUhD",
+            "BoDytkJQ4Qi",
+            "52.0"
+        ],
+        [
+            "lt3ceZWgUhD",
+            "R6f9znhg37c",
+            "52.0"
+        ],
+        [
+            "lt3ceZWgUhD",
+            "Y52XNJ50hYb",
+            "50.7"
+        ],
+        [
+            "lt3ceZWgUhD",
+            "fVra3Pwta0Q",
+            "52.7"
+        ],
+        [
+            "lt3ceZWgUhD",
+            "wsBsC6gjHvn",
+            "48.1"
+        ],
+        [
+            "lt3ceZWgUhD",
+            "ahwTMNAJvrL",
+            "51.9"
+        ],
+        [
+            "lt3ceZWgUhD",
+            "jkG3zaihdSs",
+            "48.4"
+        ],
+        [
+            "lt3ceZWgUhD",
+            "ob6SxuRcqU4",
+            "49.3"
+        ],
+        [
+            "lt3ceZWgUhD",
+            "t0J75eHKxz5",
+            "49.9"
+        ],
+        [
+            "lt3ceZWgUhD",
+            "ptWVfaCIdVx",
+            "50.1"
+        ],
+        [
+            "lt3ceZWgUhD",
+            "o36zCRjSd4G",
+            "51.0"
+        ],
+        [
+            "lt3ceZWgUhD",
+            "QyGNX2DpR4h",
+            "49.3"
+        ],
+        [
+            "lt3ceZWgUhD",
+            "mThvosEflAU",
+            "50.9"
+        ],
+        [
+            "lt3ceZWgUhD",
+            "kphDeKClFch",
+            "48.2"
+        ],
+        [
+            "lt3ceZWgUhD",
+            "pZqQRRW7PHP",
+            "49.8"
+        ],
+        [
+            "lt3ceZWgUhD",
+            "CeLsrJOH0g9",
+            "47.4"
+        ],
+        [
+            "mi8PCw0akC3",
+            "MqnLxQBigG0",
+            "49.8"
+        ],
+        [
+            "mi8PCw0akC3",
+            "PFu8alU2KWG",
+            "49.3"
+        ],
+        [
+            "mi8PCw0akC3",
+            "uyOrcHZBpW0",
+            "51.8"
+        ],
+        [
+            "mi8PCw0akC3",
+            "HfVjCurKxh2",
+            "49.5"
+        ],
+        [
+            "mi8PCw0akC3",
+            "qKzosKQPl6G",
+            "49.3"
+        ],
+        [
+            "mi8PCw0akC3",
+            "Ulj33KBau7V",
+            "49.4"
+        ],
+        [
+            "mi8PCw0akC3",
+            "sPkRcDvhGWA",
+            "48.2"
+        ],
+        [
+            "mi8PCw0akC3",
+            "tAbBVBbueqD",
+            "48.3"
+        ],
+        [
+            "mi8PCw0akC3",
+            "j8o6iO4Njsi",
+            "47.2"
+        ],
+        [
+            "mi8PCw0akC3",
+            "N7YETT3A9r1",
+            "48.9"
+        ],
+        [
+            "mi8PCw0akC3",
+            "yhCUgGcCcOo",
+            "49.4"
+        ],
+        [
+            "mi8PCw0akC3",
+            "BoDytkJQ4Qi",
+            "48.0"
+        ],
+        [
+            "mi8PCw0akC3",
+            "R6f9znhg37c",
+            "48.0"
+        ],
+        [
+            "mi8PCw0akC3",
+            "Y52XNJ50hYb",
+            "49.3"
+        ],
+        [
+            "mi8PCw0akC3",
+            "fVra3Pwta0Q",
+            "48.8"
+        ],
+        [
+            "mi8PCw0akC3",
+            "wsBsC6gjHvn",
+            "51.9"
+        ],
+        [
+            "mi8PCw0akC3",
+            "ahwTMNAJvrL",
+            "48.1"
+        ],
+        [
+            "mi8PCw0akC3",
+            "jkG3zaihdSs",
+            "51.5"
+        ],
+        [
+            "mi8PCw0akC3",
+            "ob6SxuRcqU4",
+            "49.7"
+        ],
+        [
+            "mi8PCw0akC3",
+            "t0J75eHKxz5",
+            "49.8"
+        ],
+        [
+            "mi8PCw0akC3",
+            "ptWVfaCIdVx",
+            "49.9"
+        ],
+        [
+            "mi8PCw0akC3",
+            "o36zCRjSd4G",
+            "49.0"
+        ],
+        [
+            "mi8PCw0akC3",
+            "QyGNX2DpR4h",
+            "50.7"
+        ],
+        [
+            "mi8PCw0akC3",
+            "mThvosEflAU",
+            "49.1"
+        ],
+        [
+            "mi8PCw0akC3",
+            "kphDeKClFch",
+            "51.8"
+        ],
+        [
+            "mi8PCw0akC3",
+            "pZqQRRW7PHP",
+            "50.2"
+        ],
+        [
+            "mi8PCw0akC3",
+            "CeLsrJOH0g9",
+            "52.6"
+        ],
+        [
+            "mzHTre1yUfv",
+            "MqnLxQBigG0",
+            "54920.0"
+        ],
+        [
+            "mzHTre1yUfv",
+            "PFu8alU2KWG",
+            "58795.2"
+        ],
+        [
+            "mzHTre1yUfv",
+            "uyOrcHZBpW0",
+            "101281.6"
+        ],
+        [
+            "mzHTre1yUfv",
+            "HfVjCurKxh2",
+            "3449748.0"
+        ],
+        [
+            "mzHTre1yUfv",
+            "qKzosKQPl6G",
+            "202632.8"
+        ],
+        [
+            "mzHTre1yUfv",
+            "Ulj33KBau7V",
+            "56632.0"
+        ],
+        [
+            "mzHTre1yUfv",
+            "sPkRcDvhGWA",
+            "142341.6"
+        ],
+        [
+            "mzHTre1yUfv",
+            "tAbBVBbueqD",
+            "164590.4"
+        ],
+        [
+            "mzHTre1yUfv",
+            "j8o6iO4Njsi",
+            "144805.6"
+        ],
+        [
+            "mzHTre1yUfv",
+            "N7YETT3A9r1",
+            "129883.2"
+        ],
+        [
+            "mzHTre1yUfv",
+            "yhCUgGcCcOo",
+            "131238.4"
+        ],
+        [
+            "mzHTre1yUfv",
+            "BoDytkJQ4Qi",
+            "23536.8"
+        ],
+        [
+            "mzHTre1yUfv",
+            "R6f9znhg37c",
+            "121335.2"
+        ],
+        [
+            "mzHTre1yUfv",
+            "Y52XNJ50hYb",
+            "170792.8"
+        ],
+        [
+            "mzHTre1yUfv",
+            "fVra3Pwta0Q",
+            "139785.6"
+        ],
+        [
+            "mzHTre1yUfv",
+            "wsBsC6gjHvn",
+            "142304.8"
+        ],
+        [
+            "mzHTre1yUfv",
+            "ahwTMNAJvrL",
+            "109694.4"
+        ],
+        [
+            "mzHTre1yUfv",
+            "jkG3zaihdSs",
+            "519737.6"
+        ],
+        [
+            "mzHTre1yUfv",
+            "ob6SxuRcqU4",
+            "265223.2"
+        ],
+        [
+            "mzHTre1yUfv",
+            "t0J75eHKxz5",
+            "162149.6"
+        ],
+        [
+            "mzHTre1yUfv",
+            "kqJ83J2D72s",
+            "36902.4"
+        ],
+        [
+            "mzHTre1yUfv",
+            "ptWVfaCIdVx",
+            "74546.4"
+        ],
+        [
+            "mzHTre1yUfv",
+            "o36zCRjSd4G",
+            "12415.2"
+        ],
+        [
+            "mzHTre1yUfv",
+            "QyGNX2DpR4h",
+            "41846.4"
+        ],
+        [
+            "mzHTre1yUfv",
+            "mThvosEflAU",
+            "121948.8"
+        ],
+        [
+            "mzHTre1yUfv",
+            "kphDeKClFch",
+            "125279.2"
+        ],
+        [
+            "mzHTre1yUfv",
+            "pZqQRRW7PHP",
+            "108213.6"
+        ],
+        [
+            "mzHTre1yUfv",
+            "CeLsrJOH0g9",
+            "86915.2"
+        ],
+        [
+            "PRmlwO3ht2T",
+            "MqnLxQBigG0",
+            "28.7"
+        ],
+        [
+            "PRmlwO3ht2T",
+            "PFu8alU2KWG",
+            "36.3"
+        ],
+        [
+            "PRmlwO3ht2T",
+            "uyOrcHZBpW0",
+            "33.5"
+        ],
+        [
+            "PRmlwO3ht2T",
+            "HfVjCurKxh2",
+            "30.3"
+        ],
+        [
+            "PRmlwO3ht2T",
+            "qKzosKQPl6G",
+            "38.8"
+        ],
+        [
+            "PRmlwO3ht2T",
+            "Ulj33KBau7V",
+            "11.1"
+        ],
+        [
+            "PRmlwO3ht2T",
+            "sPkRcDvhGWA",
+            "28.4"
+        ],
+        [
+            "PRmlwO3ht2T",
+            "tAbBVBbueqD",
+            "27.7"
+        ],
+        [
+            "PRmlwO3ht2T",
+            "j8o6iO4Njsi",
+            "28.2"
+        ],
+        [
+            "PRmlwO3ht2T",
+            "N7YETT3A9r1",
+            "1.3"
+        ],
+        [
+            "PRmlwO3ht2T",
+            "yhCUgGcCcOo",
+            "33.8"
+        ],
+        [
+            "PRmlwO3ht2T",
+            "BoDytkJQ4Qi",
+            "31.0"
+        ],
+        [
+            "PRmlwO3ht2T",
+            "R6f9znhg37c",
+            "29.9"
+        ],
+        [
+            "PRmlwO3ht2T",
+            "Y52XNJ50hYb",
+            "36.7"
+        ],
+        [
+            "PRmlwO3ht2T",
+            "fVra3Pwta0Q",
+            "28.4"
+        ],
+        [
+            "PRmlwO3ht2T",
+            "wsBsC6gjHvn",
+            "32.8"
+        ],
+        [
+            "PRmlwO3ht2T",
+            "ahwTMNAJvrL",
+            "35.1"
+        ],
+        [
+            "PRmlwO3ht2T",
+            "jkG3zaihdSs",
+            "27.7"
+        ],
+        [
+            "PRmlwO3ht2T",
+            "ob6SxuRcqU4",
+            "39.7"
+        ],
+        [
+            "PRmlwO3ht2T",
+            "t0J75eHKxz5",
+            "28.2"
+        ],
+        [
+            "PRmlwO3ht2T",
+            "ptWVfaCIdVx",
+            "38.5"
+        ],
+        [
+            "PRmlwO3ht2T",
+            "o36zCRjSd4G",
+            "20.2"
+        ],
+        [
+            "PRmlwO3ht2T",
+            "QyGNX2DpR4h",
+            "24.7"
+        ],
+        [
+            "PRmlwO3ht2T",
+            "mThvosEflAU",
+            "34.1"
+        ],
+        [
+            "PRmlwO3ht2T",
+            "kphDeKClFch",
+            "30.3"
+        ],
+        [
+            "PRmlwO3ht2T",
+            "pZqQRRW7PHP",
+            "30.2"
+        ],
+        [
+            "PRmlwO3ht2T",
+            "CeLsrJOH0g9",
+            "31.5"
+        ],
+        [
+            "dH7s8QGAcfX",
+            "MqnLxQBigG0",
+            "5.4"
+        ],
+        [
+            "dH7s8QGAcfX",
+            "PFu8alU2KWG",
+            "7.2"
+        ],
+        [
+            "dH7s8QGAcfX",
+            "uyOrcHZBpW0",
+            "4.6"
+        ],
+        [
+            "dH7s8QGAcfX",
+            "HfVjCurKxh2",
+            "9.6"
+        ],
+        [
+            "dH7s8QGAcfX",
+            "qKzosKQPl6G",
+            "4.4"
+        ],
+        [
+            "dH7s8QGAcfX",
+            "Ulj33KBau7V",
+            "2.0"
+        ],
+        [
+            "dH7s8QGAcfX",
+            "sPkRcDvhGWA",
+            "4.5"
+        ],
+        [
+            "dH7s8QGAcfX",
+            "tAbBVBbueqD",
+            "4.2"
+        ],
+        [
+            "dH7s8QGAcfX",
+            "j8o6iO4Njsi",
+            "6.7"
+        ],
+        [
+            "dH7s8QGAcfX",
+            "yhCUgGcCcOo",
+            "7.0"
+        ],
+        [
+            "dH7s8QGAcfX",
+            "BoDytkJQ4Qi",
+            "6.9"
+        ],
+        [
+            "dH7s8QGAcfX",
+            "R6f9znhg37c",
+            "6.6"
+        ],
+        [
+            "dH7s8QGAcfX",
+            "Y52XNJ50hYb",
+            "6.2"
+        ],
+        [
+            "dH7s8QGAcfX",
+            "fVra3Pwta0Q",
+            "4.3"
+        ],
+        [
+            "dH7s8QGAcfX",
+            "wsBsC6gjHvn",
+            "4.1"
+        ],
+        [
+            "dH7s8QGAcfX",
+            "ahwTMNAJvrL",
+            "9.7"
+        ],
+        [
+            "dH7s8QGAcfX",
+            "jkG3zaihdSs",
+            "4.4"
+        ],
+        [
+            "dH7s8QGAcfX",
+            "ob6SxuRcqU4",
+            "3.8"
+        ],
+        [
+            "dH7s8QGAcfX",
+            "t0J75eHKxz5",
+            "4.0"
+        ],
+        [
+            "dH7s8QGAcfX",
+            "ptWVfaCIdVx",
+            "9.0"
+        ],
+        [
+            "dH7s8QGAcfX",
+            "o36zCRjSd4G",
+            "4.4"
+        ],
+        [
+            "dH7s8QGAcfX",
+            "QyGNX2DpR4h",
+            "7.3"
+        ],
+        [
+            "dH7s8QGAcfX",
+            "mThvosEflAU",
+            "163.4"
+        ],
+        [
+            "dH7s8QGAcfX",
+            "kphDeKClFch",
+            "3.5"
+        ],
+        [
+            "dH7s8QGAcfX",
+            "pZqQRRW7PHP",
+            "4.7"
+        ],
+        [
+            "dH7s8QGAcfX",
+            "CeLsrJOH0g9",
+            "5.2"
+        ],
+        [
+            "KKAQM3KkDtD",
+            "MqnLxQBigG0",
+            "7660.5"
+        ],
+        [
+            "KKAQM3KkDtD",
+            "PFu8alU2KWG",
+            "7312.0"
+        ],
+        [
+            "KKAQM3KkDtD",
+            "uyOrcHZBpW0",
+            "12986.0"
+        ],
+        [
+            "KKAQM3KkDtD",
+            "HfVjCurKxh2",
+            "454887.0"
+        ],
+        [
+            "KKAQM3KkDtD",
+            "qKzosKQPl6G",
+            "26840.5"
+        ],
+        [
+            "KKAQM3KkDtD",
+            "Ulj33KBau7V",
+            "7381.5"
+        ],
+        [
+            "KKAQM3KkDtD",
+            "sPkRcDvhGWA",
+            "17093.5"
+        ],
+        [
+            "KKAQM3KkDtD",
+            "tAbBVBbueqD",
+            "21163.5"
+        ],
+        [
+            "KKAQM3KkDtD",
+            "j8o6iO4Njsi",
+            "18101.0"
+        ],
+        [
+            "KKAQM3KkDtD",
+            "N7YETT3A9r1",
+            "16900.0"
+        ],
+        [
+            "KKAQM3KkDtD",
+            "yhCUgGcCcOo",
+            "16416.5"
+        ],
+        [
+            "KKAQM3KkDtD",
+            "BoDytkJQ4Qi",
+            "3108.0"
+        ],
+        [
+            "KKAQM3KkDtD",
+            "R6f9znhg37c",
+            "16642.5"
+        ],
+        [
+            "KKAQM3KkDtD",
+            "Y52XNJ50hYb",
+            "21719.5"
+        ],
+        [
+            "KKAQM3KkDtD",
+            "fVra3Pwta0Q",
+            "18914.0"
+        ],
+        [
+            "KKAQM3KkDtD",
+            "wsBsC6gjHvn",
+            "20272.5"
+        ],
+        [
+            "KKAQM3KkDtD",
+            "ahwTMNAJvrL",
+            "13367.5"
+        ],
+        [
+            "KKAQM3KkDtD",
+            "jkG3zaihdSs",
+            "77424.0"
+        ],
+        [
+            "KKAQM3KkDtD",
+            "ob6SxuRcqU4",
+            "32766.5"
+        ],
+        [
+            "KKAQM3KkDtD",
+            "t0J75eHKxz5",
+            "19932.5"
+        ],
+        [
+            "KKAQM3KkDtD",
+            "kqJ83J2D72s",
+            "5057.0"
+        ],
+        [
+            "KKAQM3KkDtD",
+            "ptWVfaCIdVx",
+            "9440.5"
+        ],
+        [
+            "KKAQM3KkDtD",
+            "o36zCRjSd4G",
+            "1475.5"
+        ],
+        [
+            "KKAQM3KkDtD",
+            "QyGNX2DpR4h",
+            "5309.5"
+        ],
+        [
+            "KKAQM3KkDtD",
+            "mThvosEflAU",
+            "15729.0"
+        ],
+        [
+            "KKAQM3KkDtD",
+            "kphDeKClFch",
+            "13998.0"
+        ],
+        [
+            "KKAQM3KkDtD",
+            "pZqQRRW7PHP",
+            "14416.5"
+        ],
+        [
+            "KKAQM3KkDtD",
+            "CeLsrJOH0g9",
+            "13459.0"
+        ],
+        [
+            "IN2v5E9RtUD",
+            "MqnLxQBigG0",
+            "20595.0"
+        ],
+        [
+            "IN2v5E9RtUD",
+            "PFu8alU2KWG",
+            "22048.2"
+        ],
+        [
+            "IN2v5E9RtUD",
+            "uyOrcHZBpW0",
+            "37980.6"
+        ],
+        [
+            "IN2v5E9RtUD",
+            "HfVjCurKxh2",
+            "1293655.5"
+        ],
+        [
+            "IN2v5E9RtUD",
+            "qKzosKQPl6G",
+            "75987.3"
+        ],
+        [
+            "IN2v5E9RtUD",
+            "Ulj33KBau7V",
+            "21237.0"
+        ],
+        [
+            "IN2v5E9RtUD",
+            "sPkRcDvhGWA",
+            "53378.1"
+        ],
+        [
+            "IN2v5E9RtUD",
+            "tAbBVBbueqD",
+            "61721.4"
+        ],
+        [
+            "IN2v5E9RtUD",
+            "j8o6iO4Njsi",
+            "54302.1"
+        ],
+        [
+            "IN2v5E9RtUD",
+            "N7YETT3A9r1",
+            "48706.2"
+        ],
+        [
+            "IN2v5E9RtUD",
+            "yhCUgGcCcOo",
+            "49214.4"
+        ],
+        [
+            "IN2v5E9RtUD",
+            "BoDytkJQ4Qi",
+            "8826.3"
+        ],
+        [
+            "IN2v5E9RtUD",
+            "R6f9znhg37c",
+            "45500.7"
+        ],
+        [
+            "IN2v5E9RtUD",
+            "Y52XNJ50hYb",
+            "64047.3"
+        ],
+        [
+            "IN2v5E9RtUD",
+            "fVra3Pwta0Q",
+            "52419.6"
+        ],
+        [
+            "IN2v5E9RtUD",
+            "wsBsC6gjHvn",
+            "53364.3"
+        ],
+        [
+            "IN2v5E9RtUD",
+            "ahwTMNAJvrL",
+            "41135.4"
+        ],
+        [
+            "IN2v5E9RtUD",
+            "jkG3zaihdSs",
+            "194901.6"
+        ],
+        [
+            "IN2v5E9RtUD",
+            "ob6SxuRcqU4",
+            "99458.7"
+        ],
+        [
+            "IN2v5E9RtUD",
+            "t0J75eHKxz5",
+            "60806.1"
+        ],
+        [
+            "IN2v5E9RtUD",
+            "kqJ83J2D72s",
+            "13838.4"
+        ],
+        [
+            "IN2v5E9RtUD",
+            "ptWVfaCIdVx",
+            "27954.9"
+        ],
+        [
+            "IN2v5E9RtUD",
+            "o36zCRjSd4G",
+            "4655.7"
+        ],
+        [
+            "IN2v5E9RtUD",
+            "QyGNX2DpR4h",
+            "15692.4"
+        ],
+        [
+            "IN2v5E9RtUD",
+            "mThvosEflAU",
+            "45730.8"
+        ],
+        [
+            "IN2v5E9RtUD",
+            "kphDeKClFch",
+            "46979.7"
+        ],
+        [
+            "IN2v5E9RtUD",
+            "pZqQRRW7PHP",
+            "40580.1"
+        ],
+        [
+            "IN2v5E9RtUD",
+            "CeLsrJOH0g9",
+            "32593.2"
+        ],
+        [
+            "HNt8E6osxJg",
+            "MqnLxQBigG0",
+            "61785.0"
+        ],
+        [
+            "HNt8E6osxJg",
+            "PFu8alU2KWG",
+            "66144.6"
+        ],
+        [
+            "HNt8E6osxJg",
+            "uyOrcHZBpW0",
+            "113941.8"
+        ],
+        [
+            "HNt8E6osxJg",
+            "HfVjCurKxh2",
+            "3880966.5"
+        ],
+        [
+            "HNt8E6osxJg",
+            "qKzosKQPl6G",
+            "227961.9"
+        ],
+        [
+            "HNt8E6osxJg",
+            "Ulj33KBau7V",
+            "63711.0"
+        ],
+        [
+            "HNt8E6osxJg",
+            "sPkRcDvhGWA",
+            "160134.3"
+        ],
+        [
+            "HNt8E6osxJg",
+            "tAbBVBbueqD",
+            "185164.2"
+        ],
+        [
+            "HNt8E6osxJg",
+            "j8o6iO4Njsi",
+            "162906.3"
+        ],
+        [
+            "HNt8E6osxJg",
+            "N7YETT3A9r1",
+            "146118.6"
+        ],
+        [
+            "HNt8E6osxJg",
+            "yhCUgGcCcOo",
+            "147643.2"
+        ],
+        [
+            "HNt8E6osxJg",
+            "BoDytkJQ4Qi",
+            "26478.9"
+        ],
+        [
+            "HNt8E6osxJg",
+            "R6f9znhg37c",
+            "136502.1"
+        ],
+        [
+            "HNt8E6osxJg",
+            "Y52XNJ50hYb",
+            "192141.9"
+        ],
+        [
+            "HNt8E6osxJg",
+            "fVra3Pwta0Q",
+            "157258.8"
+        ],
+        [
+            "HNt8E6osxJg",
+            "wsBsC6gjHvn",
+            "160092.9"
+        ],
+        [
+            "HNt8E6osxJg",
+            "ahwTMNAJvrL",
+            "123406.2"
+        ],
+        [
+            "HNt8E6osxJg",
+            "jkG3zaihdSs",
+            "584704.8"
+        ],
+        [
+            "HNt8E6osxJg",
+            "ob6SxuRcqU4",
+            "298376.1"
+        ],
+        [
+            "HNt8E6osxJg",
+            "t0J75eHKxz5",
+            "182418.3"
+        ],
+        [
+            "HNt8E6osxJg",
+            "kqJ83J2D72s",
+            "41515.2"
+        ],
+        [
+            "HNt8E6osxJg",
+            "ptWVfaCIdVx",
+            "83864.7"
+        ],
+        [
+            "HNt8E6osxJg",
+            "o36zCRjSd4G",
+            "13967.1"
+        ],
+        [
+            "HNt8E6osxJg",
+            "QyGNX2DpR4h",
+            "47077.2"
+        ],
+        [
+            "HNt8E6osxJg",
+            "mThvosEflAU",
+            "137192.4"
+        ],
+        [
+            "HNt8E6osxJg",
+            "kphDeKClFch",
+            "140939.1"
+        ],
+        [
+            "HNt8E6osxJg",
+            "pZqQRRW7PHP",
+            "121740.3"
+        ],
+        [
+            "HNt8E6osxJg",
+            "CeLsrJOH0g9",
+            "97779.6"
+        ]
+    ],
+    "width": 3,
+    "height": 219,
+    "headerWidth": 3
+}
