@@ -1,10 +1,15 @@
 asgiref==3.2.3
+certifi==2019.11.28
+chardet==3.0.4
 Django==3.0.3
 django-filter==2.2.0
 djangorestframework==3.11.0
+idna==2.9
 Markdown==3.2.1
 playsound==1.2.2
 pyttsx3==2.71
 pytz==2019.3
+requests==2.23.0
 SpeechRecognition==3.8.1
 sqlparse==0.3.0
+urllib3==1.25.8
