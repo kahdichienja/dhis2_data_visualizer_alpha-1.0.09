@@ -2,36 +2,12 @@
 {% load static %}
 
 {% block content %}
-<script type="text/javascript">
-    google.charts.load("current", {
-        "packages": ["map"],
-        // Note: you will need to get a mapsApiKey for your project.
-        // See: https://developers.google.com/chart/interactive/docs/basic_load_libs#load-settings
-        "mapsApiKey": "AIzaSyCWC47OOAZDFRmx8pgKyWIk9qw9d7qkKKE"
-    });
-    google.charts.setOnLoadCallback(drawChart);
-    function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-            ['Lat', 'Long', 'Name'],
-            //,34.75706
-            [-0.09880, 34.75706, 'Kenya'],
-            [-0.09880, 34.75706, 'Kenya'],
-            [-0.19880, 35.75706, 'Kenya'],
-        ]);
-
-        var map = new google.visualization.Map(document.getElementById('map_div'));
-        map.draw(data, {
-            showTooltip: true,
-            showInfoWindow: true
-        });
-    }
-
-</script>
 <div class="content-wrapper">
     <section class="content-header">
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
+                    <button id="button2" class="btn btn-info">Load Updated Counties</button>
                     <h1>Map</h1>
                 </div>
                 <div class="col-sm-6">
@@ -46,54 +22,7 @@
                             <div class="form-row">
                                 <div class="col">
                                     <label class="-mbs required">Select County </label>
-                                    <select class="form-control" name="county" id="map">
-                                        <option value="Baringo">Baringo</option>
-                                        <option value="Bomet">Bomet</option>
-                                        <option value="Bungoma">Bungoma</option>
-                                        <option value="Busia">Busia</option>
-                                        <option value="Elgeyo-Marakwet">Elgeyo-Marakwet</option>
-                                        <option value="Embu">Embu</option>
-                                        <option value="Garissa">Garissa</option>
-                                        <option value="Homa Bay">Homa Bay</option>
-                                        <option value="Isiolo">Isiolo</option>
-                                        <option value="Kajiado">Kajiado</option>
-                                        <option value="Kakamega">Kakamega</option>
-                                        <option value="Kericho">Kericho</option>
-                                        <option value="Kiambu">Kiambu</option>
-                                        <option value="Kilifi">Kilifi</option>
-                                        <option value="Kirinyaga">Kirinyaga</option>
-                                        <option value="Kisii">Kisii</option>
-                                        <option value="Kisumu">Kisumu</option>
-                                        <option value="Kitui">Kitui</option>
-                                        <option value="Kwale">Kwale</option>
-                                        <option value="Laikipia">Laikipia</option>
-                                        <option value="Lamu">Lamu</option>
-                                        <option value="Machakos">Machakos</option>
-                                        <option value="Makueni">Makueni</option>
-                                        <option value="Mandera">Mandera</option>
-                                        <option value="Marsabit">Marsabit</option>
-                                        <option value="Meru">Meru</option>
-                                        <option value="Migori">Migori</option>
-                                        <option value="Mombasa">Mombasa</option>
-                                        <option value="Murang'a">Murang&#039;a</option>
-                                        <option value="Nairobi" selected="selected">Nairobi</option>
-                                        <option value="Nakuru">Nakuru</option>
-                                        <option value="Nandi">Nandi</option>
-                                        <option value="Narok">Narok</option>
-                                        <option value="Nyamira">Nyamira</option>
-                                        <option value="Nyandarua">Nyandarua</option>
-                                        <option value="Nyeri">Nyeri</option>
-                                        <option value="Samburu">Samburu</option>
-                                        <option value="Siaya">Siaya</option>
-                                        <option value="Taita-Taveta">Taita-Taveta</option>
-                                        <option value="Tana River">Tana River</option>
-                                        <option value="Tharaka-Nithi">Tharaka-Nithi</option>
-                                        <option value="Trans-Nzoia">Trans-Nzoia</option>
-                                        <option value="Turkana">Turkana</option>
-                                        <option value="Uasin Gishu">Uasin Gishu</option>
-                                        <option value="Vihiga">Vihiga</option>
-                                        <option value="Wajir">Wajir</option>
-                                        <option value="West Pokot">West Pokot</option>
+                                    <select class="form-control" name="county" id="countynames">
                                     </select>
                                 </div>
                                 <div class="col">
@@ -123,6 +52,9 @@
                   <h3 class="card-title">Map Chart</h3>
     
                   <div class="card-tools">
+                    <button type="button" class="btn btn-tool" data-card-widget="maximize">
+                        <i class="fas fa-expand"></i>
+                    </button>
                     <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
                     </button>
                     <button type="button" class="btn btn-tool" data-card-widget="remove"><i
@@ -131,7 +63,40 @@
                 </div>
                 <div class="card-body">
                   <div class="chart">
-                    <div id="map_div" style="min-height: 250px; height: 250px; max-width: 100%;"></div>
+                    <div id="map_div" style="height: 100%; width: 100%;"></div>
+                  </div>
+                </div>
+                <!-- /.card-body -->
+              </div>
+              <!-- /.card -->    
+            </div>
+            <!-- /.col (RIGHT) -->
+          </div>
+          <!-- /.row -->
+        </div><!-- /.container-fluid -->
+      </section>
+      <section class="content">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-12">
+              <!-- Map CHART -->
+              <div class="card card-primary">
+                <div class="card-header">
+                  <h3 class="card-title">Map Chart</h3>
+    
+                  <div class="card-tools">
+                    <button type="button" class="btn btn-tool" data-card-widget="maximize">
+                        <i class="fas fa-expand"></i>
+                    </button>
+                    <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
+                    </button>
+                    <button type="button" class="btn btn-tool" data-card-widget="remove"><i
+                        class="fas fa-times"></i></button>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <div class="chart">
+                    <iframe style="height: 100vh; width: 100%;" src="http://127.0.0.1:8000/mapdataIframe/"></iframe>
                   </div>
                 </div>
                 <!-- /.card-body -->
@@ -144,41 +109,76 @@
         </div><!-- /.container-fluid -->
       </section>
 </div>
-{% endblock %}
-<html>
+<script>
 
-<head>
-    {% load static %}
-    <script type="text/javascript" src="{% static 'dist/js/Googlemap.js' %}"></script>
-    <script type="text/javascript">
-        google.charts.load("current", {
-            "packages": ["map"],
-            // Note: you will need to get a mapsApiKey for your project.
-            // See: https://developers.google.com/chart/interactive/docs/basic_load_libs#load-settings
-            "mapsApiKey": "AIzaSyCWC47OOAZDFRmx8pgKyWIk9qw9d7qkKKE"
-        });
-        google.charts.setOnLoadCallback(drawChart);
-        function drawChart() {
-            var data = google.visualization.arrayToDataTable([
-                ['Lat', 'Long', 'Name'],
-                [37.4232, -122.0853, 'Work'],
-                [37.4289, -122.1697, 'University'],
-                [37.6153, -122.3900, 'Airport'],
-                [37.4422, -122.1731, 'Shopping']
-            ]);
+    let button = document.getElementById('button2')
+    button.addEventListener('click', coountyGeocode, true);
+    
+    function coountyGeocode(){
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', "{% static 'dist/js/data.json' %}", true);
+  
+        xhr.onload = function(){
+          if(this.status == 200){
+            var places = JSON.parse(this.responseText);
+            
+            var output = '';
+            var place = ""
+            var latitude = ''
+            var longitude = ''
+            
+            for(var i in places){
+                output += `
+                <option value="${places[i].name}">${places[i].name}</option>`
 
-            var map = new google.visualization.Map(document.getElementById('map_div'));
-            map.draw(data, {
-                showTooltip: true,
-                showInfoWindow: true
-            });
+                place += `${places[i].name}`;
+                latitude += places[i].latitude
+                longitude += places[i].longitude
+            }
+  
+            document.getElementById('countynames').innerHTML = output;
+            console.log(latitude, longitude, place)
+          }
         }
+  
+        xhr.send();
+      }
 
-    </script>
-</head>
+    let search = document.getElementById('countynames')
+    search.addEventListener('submit', getGeocode, true);
+    var longitude = search.getAttribute('longitude')
+    var latitude = search.getAttribute('latitude')
+    
+    function getGeocode(){
+        console.log(longitude, latitude)
+    }
 
-<body>
-    <div id="map_div" style="width: 400px; height: 300px"></div>
-</body>
+    google.charts.load("current", {
+        "packages": ["map"],
+        // Note: you will need to get a mapsApiKey for your project.
+        // See: https://developers.google.com/chart/interactive/docs/basic_load_libs#load-settings
+        "mapsApiKey": "AIzaSyCWC47OOAZDFRmx8pgKyWIk9qw9d7qkKKE"
+    });
+    google.charts.setOnLoadCallback(drawChart);
+    function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+            ['Lat', 'Long', 'Name'],
+            [-0.09880, 34.75706, 'Nakuru'],
+            [-0.09880, 34.75706, 'Kisumu'],
+            [3.2285332, 40.7056165, 'Mandera'],
+            [3.1166086,35.6000028, 'Lodwar'],
+            [-4.05052,39.667169, 'mombasa'],
+            [-1.0211616,34.3096432, 'Migori'],
 
-</html>
+        ]);
+
+        var map = new google.visualization.Map(document.getElementById('map_div'));
+        map.draw(data, {
+            showTooltip: true,
+            showInfoWindow: true
+        });
+    }
+
+
+</script>
+{% endblock %}
